@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Education</title>
+</head>
+<script>
+    function includeHTML() {
+var z, i, elmnt, file, xhttp;
+/* Loop through a collection of all HTML elements: */
+z = document.getElementsByTagName("*");
+for (i = 0; i < z.length; i++) {
+elmnt = z[i];
+/*search for elements with a certain atrribute:*/
+file = elmnt.getAttribute("w3-include-html");
+if (file) {
+  /* Make an HTTP request using the attribute value as the file name: */
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4) {
+      if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+      if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+      /* Remove the attribute, and call this function once more: */
+      elmnt.removeAttribute("w3-include-html");
+      includeHTML();
+    }
+  }
+  xhttp.open("GET", file, true);
+  xhttp.send();
+  /* Exit the function: */
+  return;
+}
+}
+}
+</script>
+<body>
+    <div w3-include-html="header.html" class="heading"></div>
+
+    <div class="study">
+        <div class="eduimg">
+            <img src="education img.jpg">
+       </div>
+
+        <div class="master">
+           <div class="clg">
+            <p class="computer">
+            <i class="fa-solid fa-graduation-cap"></i>Master in Computer Application</p>
+           <p class="name"><i class="fa-solid fa-building-columns"></i>Silver Oak University</p>
+           <p class="year">March 2025 - November 2026</p>  
+           </div><hr>
+         
+            <div class="clg">
+             <p class="computer">
+             <i class="fa-solid fa-graduation-cap"></i>Bachelor in Computer Application</p>
+            <p class="name"><i class="fa-solid fa-building-columns"></i>Silver Oak University</p>
+            <p class="year1">March 2021 - June 2024</p>  
+            </div><hr>
+
+            <div class="clg">
+                <p class="computer">
+                <i class="fa-solid fa-graduation-cap"></i>HSC in Commerce Field</p>
+               <p class="name"><i class="fa-solid fa-building-columns"></i>Shayona International School</p>
+               <p class="year2">May 2021</p>  
+               </div><hr>
+    
+           <div class="clg">
+             <p class="computer">
+             <i class="fa-solid fa-graduation-cap"></i>HSC in Commerce Field</p>
+            <p class="name"><i class="fa-solid fa-building-columns"></i>Shayona International School</p>
+            <p class="year2">May 2021</p>  
+            </div><hr>
+    
+            <div class="clg">
+             <p class="computer">
+             <i class="fa-solid fa-graduation-cap"></i>SSC</p>
+            <p class="name"><i class="fa-solid fa-building-columns"></i>Shayona International School</p>
+            <p class="year3">March 2019</p>  
+            </div>
+         </div>
+</div>
+<div w3-include-html="footer.html" id="footer"></div>
+ <script>
+    includeHTML();
+    </script>
+</body>
+</html>

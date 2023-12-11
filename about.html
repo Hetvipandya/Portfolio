@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<script>
+    function includeHTML() {
+var z, i, elmnt, file, xhttp;
+/* Loop through a collection of all HTML elements: */
+z = document.getElementsByTagName("*");
+for (i = 0; i < z.length; i++) {
+elmnt = z[i];
+/*search for elements with a certain atrribute:*/
+file = elmnt.getAttribute("w3-include-html");
+if (file) {
+  /* Make an HTTP request using the attribute value as the file name: */
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4) {
+      if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+      if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+      /* Remove the attribute, and call this function once more: */
+      elmnt.removeAttribute("w3-include-html");
+      includeHTML();
+    }
+  }
+  xhttp.open("GET", file, true);
+  xhttp.send();
+  /* Exit the function: */
+  return;
+}
+}
+}
+</script>
+<body>
+    <div w3-include-html="header.html" class="heading"></div>
+    <div class="main">
+        <div id="r1">
+            <img src="pic2.jpg">
+        </div>
+
+        <div id="r2">
+           <h1>My Bio</h1>
+           <p>Far far away, behind the word mountains, far from the<br> 
+            countries Vokalia and Consonantia, there live the blind<br>
+             texts. Separated they live in Bookmarksgrove right at the <br>
+             coast of the Semantics, a large language ocean.<br><br>
+
+            A small river named Duden flows by their place <br>
+            and supplies it with the necessary regelialia. <br>
+            It is a paradisematic country, in which roasted <br>
+            parts of sentences fly into your mouth.</p>
+        </div>
+    </div>
+    <script>
+        includeHTML();
+        </script>
+        <div w3-include-html="footer.html" id="footer"></div>
+</body>
+</html>

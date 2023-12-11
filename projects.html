@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="portfolio.css">
+    <title>Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<script>
+    function includeHTML() {
+var z, i, elmnt, file, xhttp;
+/* Loop through a collection of all HTML elements: */
+z = document.getElementsByTagName("*");
+for (i = 0; i < z.length; i++) {
+elmnt = z[i];
+/*search for elements with a certain atrribute:*/
+file = elmnt.getAttribute("w3-include-html");
+if (file) {
+  /* Make an HTTP request using the attribute value as the file name: */
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4) {
+      if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+      if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+      /* Remove the attribute, and call this function once more: */
+      elmnt.removeAttribute("w3-include-html");
+      includeHTML();
+    }
+  }
+  xhttp.open("GET", file, true);
+  xhttp.send();
+  /* Exit the function: */
+  return;
+}
+}
+}
+</script>
+<body>
+    <div w3-include-html="header.html" class="heading"></div>
+
+     <div class="img1">
+        <img class="proimg1" src="proj1 img.jpg">
+        <div class="caption1">
+            <div class="text">Form using HTML & CSS</div>
+        </div>       
+     </div>
+
+     <div class="img2">
+        <img class="proimg2" src="proj2 img.jpg">
+        <div class="caption2">
+            <div class="text">Table using HTML & CSS</div>
+        </div>
+     </div>
+
+     <div class="img3">
+        <img class="proimg3" src="proj3 img.jpg">
+        <div class="caption3">
+            <div class="text">Layout using HTML & CSS</div>
+        </div>
+     </div>
+
+     <div class="img4">
+        <img class="proimg4" src="proj4 img.jpg">
+        <div class="caption4">
+            <div class="text">Portfolio using HTML & CSS</div>
+        </div>
+     </div>
+     <div w3-include-html="footer.html" id="footer"></div>
+<script>
+        includeHTML();
+        </script>
+</body>
+</html>
